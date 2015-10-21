@@ -22,4 +22,29 @@ class AdminCategoriesController extends Controller
         return view('admin.categories.index', compact('categories'));
     }
 
+    public function create()
+    {
+        return 'create';
+    }
+
+    public function edit($id)
+    {
+        return $id;
+    }
+
+    public function destroy($id)
+    {
+        return $id;
+    }
+
+    public function update($id)
+    {
+        return $id;
+    }
+
+    public function store()
+    {
+        return 'store';
+    }
+
 }

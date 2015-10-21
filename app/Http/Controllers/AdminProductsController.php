@@ -22,4 +22,29 @@ class AdminProductsController extends Controller
 
         return view('admin.products.index', compact('products'));
     }
+
+    public function create()
+    {
+        return 'create';
+    }
+
+    public function edit($id)
+    {
+        return $id;
+    }
+
+    public function destroy($id)
+    {
+        return $id;
+    }
+
+    public function update($id)
+    {
+        return $id;
+    }
+
+    public function store()
+    {
+        return 'store';
+    }
 }
