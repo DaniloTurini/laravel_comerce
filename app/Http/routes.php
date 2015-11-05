@@ -10,9 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-//Route::get('admin/categories', 'AdminCategoriesController@index');
-Route::get('admin/products', 'AdminProductsController@index');
+Route::get('/',function(){
+    return view('welcome');
+});
 
 Route::group(['prefix'=>'admin'], function(){
 
@@ -24,7 +24,6 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('destroy/{id}',['as' => 'admin.categories.destroy', 'uses' => 'AdminCategoriesController@destroy']);
         Route::put('update/{id}',['as' => 'admin.categories.update', 'uses' => 'AdminCategoriesController@update']);
         Route::post('store',['as' => 'admin.categories.store', 'uses' => 'AdminCategoriesController@store']);
-
     });
 
     Route::group(['prefix'=>'products'], function(){
@@ -35,7 +34,6 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('destroy/{id}',['as' => 'admin.products.destroy', 'uses' => 'AdminProductsController@destroy']);
         Route::put('update/{id}',['as' => 'admin.products.update', 'uses' => 'AdminProductsController@update']);
         Route::post('store',['as' => 'admin.products.store', 'uses' => 'AdminProductsController@store']);
-
     });
 
 });

@@ -4,7 +4,7 @@ namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Product;
 use Illuminate\Http\Request;
-use CodeCommerce\Http\Requests;
+use CodeCommerce\Http\Requests\RequestProduct;
 use CodeCommerce\Http\Controllers\Controller;
 
 class AdminProductsController extends Controller
@@ -13,38 +13,61 @@ class AdminProductsController extends Controller
 
     public function __construct(Product $product)
     {
-        $this->products = $product;
+        $this->productModel = $product;
     }
 
     public function index()
     {
-        $products = $this->products->all();
+        $products = $this->productModel->all();
 
         return view('admin.products.index', compact('products'));
     }
 
     public function create()
     {
-        return 'create';
+        return view('admin.products.create');
+    }
+
+    public function store(RequestProduct $request)
+    {
+        $featured = $request->has('featured')? 1 : 0;
+        $recommend  = $request->has('recommend')? 1 : 0;
+
+        $this->productModel->create([
+                                    'name'=>$request->get('name'),
+                                    'description'=>$request->get('description'),
+                                    'price'=>$request->get('price'),
+                                    'featured'=>$featured,
+                                    'recommend'=>$recommend]);
+
+        return redirect()->route('admin.products.index');
     }
 
     public function edit($id)
     {
-        return $id;
+        $product = $this->productModel->find($id);
+        return view('admin.products.edit', compact('product'));
+    }
+
+    public function update($id, RequestProduct $request)
+    {
+        $featured = $request->has('featured')? 1 : 0;
+        $recommend  = $request->has('recommend')? 1 : 0;
+
+        $this->productModel->find($id)->update([
+                                        'name'=>$request->get('name'),
+                                        'description'=>$request->get('description'),
+                                        'price'=>$request->get('price'),
+                                        'featured'=>$featured,
+                                        'recommend'=>$recommend]);
+
+        return redirect()->route('admin.products.index');
     }
 
     public function destroy($id)
     {
-        return $id;
+        $this->productModel->find($id)->delete($id);
+        return redirect()->route('admin.products.index');
     }
 
-    public function update($id)
-    {
-        return $id;
-    }
-
-    public function store()
-    {
-        return 'store';
-    }
 }
