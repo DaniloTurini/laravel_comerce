@@ -17,6 +17,7 @@
 
             <div class="form-group">
                 {!! Form::submit('Save Category', ['class'=>'btn btn-primary']) !!}
+                <a role="button" href="{{ route('admin.categories.index') }}" class="btn btn-default">Return</a>
             </div>
 
 

@@ -17,6 +17,7 @@
 
         <div class="form-group">
             {!! Form::submit('Add Product', ['class'=>'btn btn-primary']) !!}
+            <a role="button" href="{{ route('admin.products.index') }}" class="btn btn-default">Return</a>
         </div>
 
         {!! Form::close() !!}

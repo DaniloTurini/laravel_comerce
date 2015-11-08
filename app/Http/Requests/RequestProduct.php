@@ -26,7 +26,7 @@ class RequestProduct extends Request
         return [
             'name' => 'required|min:5',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required|numeric|min:0.1'
         ];
     }
 }
