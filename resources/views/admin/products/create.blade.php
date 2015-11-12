@@ -13,12 +13,17 @@
 
         {!! Form::open(['route'=>'admin.products.store', 'method'=>'POST']) !!}
 
-        @include('admin.products._form')
+            <div class="form-group">
+                {!! Form::label('category', 'Category:') !!}
+                {!! Form::select('category_id', $categories, null, ['class'=>'form-control']) !!}
+            </div>
 
-        <div class="form-group">
-            {!! Form::submit('Add Product', ['class'=>'btn btn-primary']) !!}
-            <a role="button" href="{{ route('admin.products.index') }}" class="btn btn-default">Return</a>
-        </div>
+            @include('admin.products._form')
+
+            <div class="form-group">
+                {!! Form::submit('Add Product', ['class'=>'btn btn-primary']) !!}
+                <a role="button" href="{{ route('admin.products.index') }}" class="btn btn-default">Return</a>
+            </div>
 
         {!! Form::close() !!}
 

@@ -11,6 +11,7 @@
         <th>Name</th>
         <th>Description</th>
         <th>Price</th>
+        <th>Category</th>
         <th>Action</th>
 
         @foreach( $products as $product)
@@ -18,6 +19,7 @@
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->price }}</td>
+                <td>{{ $product->category->name }}</td>
                 <td>
                     <a href="{{ route('admin.products.edit',['id'=>$product->id]) }}" class="btn btn-default">Edit</a>
                     <a href="{{ route('admin.products.destroy',['id'=>$product->id]) }}" class="btn btn-danger">Destroy</a>
@@ -25,5 +27,6 @@
             </tr>
         @endforeach
     </table>
+    {!! $products->render() !!}
 
 @endsection

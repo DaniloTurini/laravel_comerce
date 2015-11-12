@@ -13,6 +13,6 @@ class ProductTableSeeder extends Seeder
     {
         \CodeCommerce\Product::truncate();
 
-        factory('CodeCommerce\Product', 20)->create();
+        factory('CodeCommerce\Product', 40)->create();
     }
 }

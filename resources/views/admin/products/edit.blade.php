@@ -12,13 +12,17 @@
         @endif
 
         {!! Form::model($product,['route'=>['admin.products.update', $product->id], 'method'=>'PUT']) !!}
+            <div class="form-group">
+                {!! Form::label('category', 'Category:') !!}
+                {!! Form::select('category_id', $categories, $product->category->id, ['class'=>'form-control']) !!}
+            </div>
 
-        @include('admin.products._form')
+            @include('admin.products._form')
 
-        <div class="form-group">
-            {!! Form::submit('Save Product', ['class'=>'btn btn-primary']) !!}
-            <a role="button" href="{{ route('admin.products.index') }}" class="btn btn-default">Return</a>
-        </div>
+            <div class="form-group">
+                {!! Form::submit('Save Product', ['class'=>'btn btn-primary']) !!}
+                <a role="button" href="{{ route('admin.products.index') }}" class="btn btn-default">Return</a>
+            </div>
 
         {!! Form::close() !!}
 
