@@ -6,6 +6,7 @@ use CodeCommerce\Category;
 use CodeCommerce\Http\Requests\ProductImageRequest;
 use CodeCommerce\Product;
 use CodeCommerce\ProductImage;
+use CodeCommerce\Tag;
 use Illuminate\Http\Request;
 use CodeCommerce\Http\Requests\RequestProduct;
 use CodeCommerce\Http\Controllers\Controller;
@@ -40,13 +41,15 @@ class AdminProductsController extends Controller
         $featured = $request->has('featured')? 1 : 0;
         $recommend  = $request->has('recommend')? 1 : 0;
 
-        $this->productModel->create([
+        $product = $this->productModel->create([
                                     'name'=>$request->get('name'),
                                     'description'=>$request->get('description'),
                                     'price'=>$request->get('price'),
                                     'category_id'=>$request->get('category_id'),
                                     'featured'=>$featured,
                                     'recommend'=>$recommend]);
+
+        $product->tags()->sync($this->getTagsIds($request->tags));
 
         return redirect()->route('admin.products.index');
     }
@@ -70,6 +73,9 @@ class AdminProductsController extends Controller
                                         'category_id'=>$request->get('category_id'),
                                         'featured'=>$featured,
                                         'recommend'=>$recommend]);
+
+        $product = $this->productModel->find($id);
+        $product->tags()->sync($this->getTagsIds($request->tags));
 
         return redirect()->route('admin.products.index');
     }
@@ -120,6 +126,18 @@ class AdminProductsController extends Controller
         $image->delete();
 
         return redirect()->route('admin.products.images', ['id'=>$product->id]);
+    }
+
+    private function getTagsIds($tags)
+    {
+        $tagList = array_filter(array_map('trim', explode(',', $tags)));
+        $tagsIDs = [];
+        foreach($tagList as $tagName)
+        {
+            $tagsIDs[] = Tag::firstOrCreate(['name' => $tagName])->id;
+        }
+
+        return $tagsIDs;
     }
 
 }

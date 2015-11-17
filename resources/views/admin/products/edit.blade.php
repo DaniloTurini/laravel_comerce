@@ -20,6 +20,11 @@
             @include('admin.products._form')
 
             <div class="form-group">
+               {!! Form::label('tags', 'Tags:') !!}
+               {!! Form::textarea('tags', $product->tagList, ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
                 {!! Form::submit('Save Product', ['class'=>'btn btn-primary']) !!}
                 <a role="button" href="{{ route('admin.products.index') }}" class="btn btn-default">Return</a>
             </div>
