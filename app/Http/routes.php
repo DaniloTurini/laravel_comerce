@@ -10,9 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/',function(){
-    return view('welcome');
-});
+Route::get('/','StoreController@index');
+Route::get('category/{id}',['as' => 'store.category', 'uses' => 'StoreController@category']);
 
 Route::group(['prefix'=>'admin', 'where' => ['id' => '[0-9]+']], function(){
 
