@@ -8,12 +8,7 @@
     <meta name="author" content="">
     <title>Home | E-Shop</title>
 
-    {!!Html::style('css/bootstrap.min.css') !!}
-    {!!Html::style('css/font-awesome.min.css') !!}
-    {!!Html::style('css/prettyPhoto.css') !!}
-    {!!Html::style('css/animate.css') !!}
-    {!!Html::style('css/main.css') !!}
-    {!!Html::style('css/responsive.css') !!}
+    {!!Html::style(elixir('css/all.css')) !!}
 
 </head><!--/head-->
 
@@ -132,11 +127,7 @@
 </div>
 </footer><!--/Footer-->
 
-{!!Html::script('js/jquery.js') !!}
-{!!Html::script('js/bootstrap.min.js') !!}
-{!!Html::script('js/jquery.scrollUp.min.js') !!}
-{!!Html::script('js/jquery.prettyPhoto.js') !!}
-{!!Html::script('js/main.js') !!}
+{!!Html::script(elixir('js/all.js')) !!}
 
 </body>
 </html>
