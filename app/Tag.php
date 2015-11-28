@@ -8,8 +8,8 @@ class Tag extends Model
 {
     protected $fillable = ['name'];
 
-    public function product()
+    public function products()
     {
-        return $this->belongsToMany('CodCommerce\Product');
+        return $this->belongsToMany('CodeCommerce\Product');
     }
 }
