@@ -14,5 +14,10 @@ class ProductTableSeeder extends Seeder
         \CodeCommerce\Product::truncate();
 
         factory('CodeCommerce\Product', 40)->create();
+
+        foreach(\CodeCommerce\Product::all() as $product)
+        {
+            $product->tags()->sync([rand(1, 10)]);
+        }
     }
 }
