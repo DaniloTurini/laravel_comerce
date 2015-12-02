@@ -37,6 +37,18 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
+    public function  reduce($id)
+    {
+        $cart = $this->getCart();
+
+        $product = Product::find($id);
+        $cart->reduce($id);
+
+        Session::set('cart', $cart);
+
+        return redirect()->route('cart');
+    }
+
     public function destroy($id)
     {
         $cart = $this->getCart();

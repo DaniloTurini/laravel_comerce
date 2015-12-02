@@ -25,6 +25,21 @@ class Cart
         return $this->items;
     }
 
+    public function reduce($id)
+    {
+        $this->items += [
+            $id => [
+                'qtd' => isset($this->items[$id]['qtd']) ? $this->items[$id]['qtd']-- : 1
+            ]
+        ];
+
+        if ($this->items[$id]['qtd'] <= 0){
+            $this->remove($id);
+        } else {
+            return $this->items;
+        }
+    }
+
     public function remove($id)
     {
         unset($this->items[$id]);

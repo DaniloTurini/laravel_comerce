@@ -33,7 +33,9 @@
                                 R$ {{ number_format($item['price'],2,",",".") }}
                             </td>
                             <td class="cart_quantity">
+                                <a href="{{ route('cart.reduce', ['id'=>$k]) }}" class="btn btn-primary">-</a>
                                 {{ $item['qtd'] }}
+                                <a href="{{ route('cart.add', ['id'=>$k]) }}" class="btn btn-primary">+</a>
                             </td>
                             <td class="cart_total">
                                 <p class="cart_total_price"> R$ {{ number_format($item['price'] * $item['qtd'],2,",",".") }} </p>
