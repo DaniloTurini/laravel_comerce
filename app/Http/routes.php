@@ -20,9 +20,14 @@ Route::get('cart/add/{id}',['as' => 'cart.add', 'uses' => 'CartController@add'])
 Route::get('cart/reduce/{id}',['as' => 'cart.reduce', 'uses' => 'CartController@reduce']);
 Route::get('cart/destroy/{id}',['as' => 'cart.destroy', 'uses' => 'CartController@destroy']);
 
-Route::get('checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place']);
+Route::group(['middleware'=>'auth'], function(){
+    Route::get('checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place']);
+    Route::get('account/orders', ['as' => 'account.orders', 'uses' => 'AccountController@orders']);
+});
 
 Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin', 'where' => ['id' => '[0-9]+']], function(){
+
+    Route::get('',['as' => 'admin.index', 'uses' => 'TestController@adminIndex']);
 
     Route::group(['prefix'=>'categories'], function(){
 
@@ -52,6 +57,11 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin', 'where' => ['id' =>
 
         });
 
+    });
+
+    Route::group(['prefix'=>'orders'], function(){
+        Route::get('',['as' => 'admin.orders.index', 'uses' => 'AdminOrdersController@index']);
+        Route::get('update/{id}',['as' => 'admin.orders.update', 'uses' => 'AdminOrdersController@update']);
     });
 
 });

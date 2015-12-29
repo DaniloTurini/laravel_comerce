@@ -21,4 +21,13 @@ class Order extends Model
     {
         return $this->belongsTo('CodeCommerce\User');
     }
+
+    public function getDescStatusAttribute()
+    {
+        if ($this->status==0){
+            return 'Aberto';
+        } else {
+            return 'Finalizado';
+        }
+    }
 }

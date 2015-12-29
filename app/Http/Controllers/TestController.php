@@ -12,4 +12,9 @@ class TestController extends Controller
     {
         return "oi";
     }
+
+    public function adminIndex()
+    {
+        return view('admin.index');
+    }
 }
