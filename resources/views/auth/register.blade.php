@@ -43,6 +43,13 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-md-4 control-label">District</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="district" value="{{ old('district') }}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-md-4 control-label">Zip Code</label>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="zip_code" value="{{ old('zip_code') }}">
