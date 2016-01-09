@@ -66,6 +66,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin', 'where' => ['id' =>
 
 });
 
+Route::get('test', 'CheckoutController@test');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
