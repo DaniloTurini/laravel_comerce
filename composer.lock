@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c465f397993abd064b32673bfbb227fc",
-    "content-hash": "8d00065878747d99d7ad4ea5dfbb767b",
+    "hash": "38bc0a5dc49a630ee52e14cb97c095f7",
+    "content-hash": "f6a181653cb7fba8d186a953dd309605",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -151,6 +151,72 @@
             "time": "2014-10-24 07:27:01"
         },
         {
+            "name": "doctrine/collections",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/collections.git",
+                "reference": "866e100a425b8b73d15393fd081c6bf067f05bf9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/866e100a425b8b73d15393fd081c6bf067f05bf9",
+                "reference": "866e100a425b8b73d15393fd081c6bf067f05bf9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Collections\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Collections Abstraction library",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "array",
+                "collections",
+                "iterator"
+            ],
+            "time": "2015-09-11 15:24:21"
+        },
+        {
             "name": "doctrine/inflector",
             "version": "dev-master",
             "source": {
@@ -216,6 +282,101 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "guzzle/guzzle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle3.git",
+                "reference": "b3f5050cb6270c7a728a0b74ac2de50a262b3e02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/b3f5050cb6270c7a728a0b74ac2de50a262b3e02",
+                "reference": "b3f5050cb6270c7a728a0b74ac2de50a262b3e02",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
+                "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
+                "guzzle/parser": "self.version",
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.3",
+                "monolog/monolog": "~1.0",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "~1.0",
+                "symfony/class-loader": "~2.1",
+                "zendframework/zend-cache": "2.*,<2.3",
+                "zendframework/zend-log": "2.*,<2.3"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Guzzle 5 has moved to a new package name. The package you have installed, Guzzle 3, is deprecated."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "PHP HTTP client. This library is deprecated in favor of https://packagist.org/packages/guzzlehttp/guzzle",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2015-04-29 17:06:53"
         },
         {
             "name": "illuminate/html",
@@ -414,12 +575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d90649816ab0a348b01eb15e8eb4447d827c62e2"
+                "reference": "f07ddf648a19d1c1c397b774b9d367bef121d1cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d90649816ab0a348b01eb15e8eb4447d827c62e2",
-                "reference": "d90649816ab0a348b01eb15e8eb4447d827c62e2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f07ddf648a19d1c1c397b774b9d367bef121d1cb",
+                "reference": "f07ddf648a19d1c1c397b774b9d367bef121d1cb",
                 "shasum": ""
             },
             "require": {
@@ -534,7 +695,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-01-07 19:47:04"
+            "time": "2016-01-10 17:53:24"
         },
         {
             "name": "league/flysystem",
@@ -890,25 +1051,36 @@
         },
         {
             "name": "phpsc/pagseguro",
-            "version": "1.0.0alpha1",
+            "version": "1.0.0alpha7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPSC/pagseguro.git",
-                "reference": "cfb34382fb343285f1b691a7368304247beca9de"
+                "reference": "8159d330e6d81c459c5b5f16c73a9f0f871e63cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPSC/pagseguro/zipball/cfb34382fb343285f1b691a7368304247beca9de",
-                "reference": "cfb34382fb343285f1b691a7368304247beca9de",
+                "url": "https://api.github.com/repos/PHPSC/pagseguro/zipball/8159d330e6d81c459c5b5f16c73a9f0f871e63cf",
+                "reference": "8159d330e6d81c459c5b5f16c73a9f0f871e63cf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3"
+                "doctrine/collections": "~1.2@dev",
+                "guzzle/guzzle": "~3.8",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "pdepend/pdepend": "~2.0",
+                "phpunit/phpunit": "*",
+                "sebastian/phpcpd": "*",
+                "squizlabs/php_codesniffer": "~1.5"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "PHPSC\\PagSeguro": "src/"
+                "psr-4": {
+                    "PHPSC\\PagSeguro\\": [
+                        "src",
+                        "test"
+                    ]
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -918,8 +1090,7 @@
             "authors": [
                 {
                     "name": "Luís Otávio Cobucci Oblonczyk",
-                    "email": "lcobucci@gmail.com",
-                    "role": "Developer"
+                    "email": "lcobucci@gmail.com"
                 }
             ],
             "description": "Client para integração com API do Pagseguro",
@@ -929,7 +1100,7 @@
                 "Pagseguro",
                 "api"
             ],
-            "time": "2013-04-22 13:40:32"
+            "time": "2014-08-11 23:53:21"
         },
         {
             "name": "psr/log",
@@ -1109,12 +1280,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "a84e68e0705eab144185b1a796f9a3d289620e63"
+                "reference": "36511c4574375da36778570f633c54fdb787a415"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/a84e68e0705eab144185b1a796f9a3d289620e63",
-                "reference": "a84e68e0705eab144185b1a796f9a3d289620e63",
+                "url": "https://api.github.com/repos/symfony/console/zipball/36511c4574375da36778570f633c54fdb787a415",
+                "reference": "36511c4574375da36778570f633c54fdb787a415",
                 "shasum": ""
             },
             "require": {
@@ -1160,7 +1331,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-06 09:57:37"
+            "time": "2016-01-12 17:44:11"
         },
         {
             "name": "symfony/css-selector",
@@ -1442,12 +1613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "d422b2090d41654cf7dabc5c832b5b5bfb3fef25"
+                "reference": "d1f7ff9f3c5304d60243f6570b4baa75b0a143a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/d422b2090d41654cf7dabc5c832b5b5bfb3fef25",
-                "reference": "d422b2090d41654cf7dabc5c832b5b5bfb3fef25",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/d1f7ff9f3c5304d60243f6570b4baa75b0a143a9",
+                "reference": "d1f7ff9f3c5304d60243f6570b4baa75b0a143a9",
                 "shasum": ""
             },
             "require": {
@@ -1489,7 +1660,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-07 13:28:07"
+            "time": "2016-01-12 17:44:11"
         },
         {
             "name": "symfony/http-kernel",
@@ -1497,12 +1668,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "ff7fbee35f2ab7185aba2cfdd81027fd7945ddb3"
+                "reference": "990e37e88d80470d6f2047f7341ef6ef959be448"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/ff7fbee35f2ab7185aba2cfdd81027fd7945ddb3",
-                "reference": "ff7fbee35f2ab7185aba2cfdd81027fd7945ddb3",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/990e37e88d80470d6f2047f7341ef6ef959be448",
+                "reference": "990e37e88d80470d6f2047f7341ef6ef959be448",
                 "shasum": ""
             },
             "require": {
@@ -1571,7 +1742,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-03 15:32:00"
+            "time": "2016-01-12 17:44:11"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -2692,12 +2863,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "d0896b45cbc66f60e957f19a95e826ccf7fbb321"
+                "reference": "539497c620125dcc0b29ef54afe02ac5d2db4a76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d0896b45cbc66f60e957f19a95e826ccf7fbb321",
-                "reference": "d0896b45cbc66f60e957f19a95e826ccf7fbb321",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/539497c620125dcc0b29ef54afe02ac5d2db4a76",
+                "reference": "539497c620125dcc0b29ef54afe02ac5d2db4a76",
                 "shasum": ""
             },
             "require": {
@@ -2756,7 +2927,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-01-08 13:46:07"
+            "time": "2016-01-12 09:08:24"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
